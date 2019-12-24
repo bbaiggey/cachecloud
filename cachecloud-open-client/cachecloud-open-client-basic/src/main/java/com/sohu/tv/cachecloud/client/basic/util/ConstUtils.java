@@ -33,7 +33,7 @@ public class ConstUtils {
 
     static {
         ResourceBundle rb = ResourceBundle.getBundle("cacheCloudClient");
-
+        
         HTTP_CONN_TIMEOUT = Integer.valueOf(rb.getString("http_conn_timeout"));
         HTTP_SOCKET_TIMEOUT = Integer.valueOf(rb.getString("http_socket_timeout"));
 
@@ -44,6 +44,7 @@ public class ConstUtils {
         REDIS_SENTINEL_URL = DOMAIN_URL + rb.getString("redis_sentinel_suffix") + CLIENT_VERSION;
         REDIS_STANDALONE_URL = DOMAIN_URL + rb.getString("redis_standalone_suffix") + CLIENT_VERSION;
         CACHECLOUD_REPORT_URL = DOMAIN_URL + rb.getString("cachecloud_report_url");
+       
     }
 
 }

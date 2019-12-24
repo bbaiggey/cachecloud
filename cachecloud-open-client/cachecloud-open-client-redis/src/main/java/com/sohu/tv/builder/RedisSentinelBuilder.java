@@ -1,5 +1,16 @@
 package com.sohu.tv.builder;
 
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.alibaba.fastjson.JSONObject;
 import com.sohu.tv.cachecloud.client.basic.heartbeat.ClientStatusEnum;
 import com.sohu.tv.cachecloud.client.basic.util.ConstUtils;
@@ -7,20 +18,8 @@ import com.sohu.tv.cachecloud.client.basic.util.HttpUtils;
 import com.sohu.tv.cachecloud.client.basic.util.StringUtil;
 import com.sohu.tv.cachecloud.client.jedis.stat.ClientDataCollectReportExecutor;
 
-import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisSentinelPool;
 import redis.clients.jedis.Protocol;
-
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * redis sentinel 客户端的builder

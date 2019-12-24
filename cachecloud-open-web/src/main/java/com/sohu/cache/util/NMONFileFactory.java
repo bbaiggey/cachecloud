@@ -76,6 +76,7 @@ public class NMONFileFactory {
 						continue;
 					}
 					for(File nmonFile : nmonFiles) {
+						logger.info(">>>>>>>>>>>>>>>>>>>>获取系统的nmonFiles{} ", nmonFile);
 						nmonFileMap.put(osDir.getName() + "_" + archDir.getName() 
 								+ "_" + nmonFile.getName() , nmonFile);
 					}

@@ -16,17 +16,19 @@ public class ServerJob extends CacheBaseJob {
 
     @Override
     public void action(JobExecutionContext context) {
-//        try {
-//            JobDataMap dataMap =  context.getMergedJobDataMap();
-//            SchedulerContext schedulerContext = context.getScheduler().getContext();
-//            ApplicationContext applicationContext = (ApplicationContext)schedulerContext.get(APPLICATION_CONTEXT_KEY);
-//            ServerStatusCollector serverStatusCollector = applicationContext.getBean("serverStatusCollector", ServerStatusCollector.class);
-//            String ip = dataMap.getString(ConstUtils.HOST_KEY);
-//            serverStatusCollector.fetchServerStatus(ip);
-//        } catch (SchedulerException e) {
-//            logger.error(e.getMessage(), e);
-//        } catch (Exception e) {
-//            logger.error(e.getMessage(), e);
-//        }
+    	 long startTime = System.currentTimeMillis();
+        try {
+            JobDataMap dataMap =  context.getMergedJobDataMap();
+            SchedulerContext schedulerContext = context.getScheduler().getContext();
+            ApplicationContext applicationContext = (ApplicationContext)schedulerContext.get(APPLICATION_CONTEXT_KEY);
+            ServerStatusCollector serverStatusCollector = applicationContext.getBean("serverStatusCollector", ServerStatusCollector.class);
+            String ip = dataMap.getString(ConstUtils.HOST_KEY);
+            serverStatusCollector.fetchServerStatus(ip);
+            logger.info("ServerJob cost time {} ms", (System.currentTimeMillis() - startTime));
+        } catch (SchedulerException e) {
+            logger.error(e.getMessage(), e);
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+        }
     }
 }

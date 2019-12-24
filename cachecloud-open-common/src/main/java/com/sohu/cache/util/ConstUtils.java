@@ -41,15 +41,16 @@ public class ConstUtils {
     public static final String REDIS_SLOWLOG_JOB_GROUP = "redisSlowLog";
     public static final String REDIS_SLOWLOG_TRIGGER_GROUP = "redisSlowLog-";
     
+    // server job/trigger name/group
+    public static final String SERVER_JOB_NAME = "serverJob";
+    public static final String SERVER_JOB_GROUP = "server";
+    public static final String SERVER_TRIGGER_GROUP = "server-";
+    
     // 创建trigger时，dataMap的数据key
     public static final String HOST_KEY = "host_key";
     public static final String PORT_KEY = "port_key";
     public static final String APP_KEY = "app_key";
     public static final String HOST_ID_KEY = "host_id_key";
-    // server job/trigger name/group
-    public static final String SERVER_JOB_NAME = "serverJob";
-    public static final String SERVER_JOB_GROUP = "server";
-    public static final String SERVER_TRIGGER_GROUP = "server-";
 
     //mysql收集数据的时间字段
     public static final String COLLECT_TIME = "CollectTime";
@@ -96,7 +97,7 @@ public class ConstUtils {
     public static String DEFAULT_PASSWORD = "cachecloud";
     public static String PASSWORD = DEFAULT_PASSWORD;
 
-    public static int DEFAULT_SSH_PORT_DEFAULT = 22;
+    public static int DEFAULT_SSH_PORT_DEFAULT = 22022;
     public static int SSH_PORT_DEFAULT = DEFAULT_SSH_PORT_DEFAULT;
 
 

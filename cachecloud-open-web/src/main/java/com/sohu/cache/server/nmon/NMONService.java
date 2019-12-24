@@ -93,6 +93,7 @@ public class NMONService {
 			logger.warn("{} no corresponding nmon file", os);
 			nmonFile = NMONFileFactory.getNMONFile(OSFactory.getDefaultOS(osInfo));
 		}
+		logger.info(">>>>>>>>>>>>>>>>>>ip{}, session:{}, file:{} ", ip, session, nmonFile);
 		//将nmon文件传输至服务器
 		sendNMONToServer(ip, session, nmonFile);
 		
