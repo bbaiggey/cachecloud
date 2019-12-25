@@ -114,7 +114,7 @@ Highcharts.setOptions({
 						<tr>
 							<td>${command.commandName}</td>
 							<td><fmt:formatNumber value="${command.commandCount}" pattern="#,#00"/></td>
-							<td><fmt:formatDate value="${command.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+							<td><fmt:formatDate value="${command.modifyTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
 						</tr>
 					</c:forEach>
 				</tbody>
