@@ -236,6 +236,7 @@ public class AppStatsCenterImpl implements AppStatsCenter {
         AppCommandStats appCommandStatsTemp = appStatsDao.getCommandClimaxCreateTime(appId, commandName, appCommandStats.getCommandCount(), td);
         if (appCommandStatsTemp != null) {
             appCommandStats.setCreateTime(appCommandStatsTemp.getCreateTime());
+            appCommandStats.setModifyTime(appCommandStatsTemp.getModifyTime());
         }
         return appCommandStats;
     }

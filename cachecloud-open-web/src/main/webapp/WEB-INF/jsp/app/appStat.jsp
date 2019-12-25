@@ -109,12 +109,14 @@ Highcharts.setOptions({
 						<td>命令</td>
 						<td>峰值QPM</td>
 						<td>峰值产生时间</td>
+						<td>统计插入时间</td>
 					</tr>
 					<c:forEach items="${top5ClimaxList}" var="command">
 						<tr>
 							<td>${command.commandName}</td>
 							<td><fmt:formatNumber value="${command.commandCount}" pattern="#,#00"/></td>
 							<td><fmt:formatDate value="${command.modifyTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+							<td><fmt:formatDate value="${command.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
 						</tr>
 					</c:forEach>
 				</tbody>
